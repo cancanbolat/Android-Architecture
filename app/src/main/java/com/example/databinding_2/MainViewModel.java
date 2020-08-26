@@ -27,5 +27,9 @@ public class MainViewModel extends ViewModel {
         this.userMutable.setValue(userList);
     }
 
+    public User itemClick(User user){
+        return user;
+    }
+
 
 }
