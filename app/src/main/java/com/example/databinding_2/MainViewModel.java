@@ -9,6 +9,11 @@ import java.util.List;
 public class MainViewModel extends ViewModel {
 
     private MutableLiveData<List<User>> userMutable = new MutableLiveData<>();
+    private MainNavigator navigator;
+
+    public void setNavigator(MainNavigator navigator) {
+        this.navigator = navigator;
+    }
 
     public MutableLiveData<List<User>> getUserMutable() {
         return userMutable;
@@ -27,8 +32,8 @@ public class MainViewModel extends ViewModel {
         this.userMutable.setValue(userList);
     }
 
-    public User itemClick(User user){
-        return user;
+    public void itemClick(User user){
+        navigator.onItemClick(user);
     }
 
 
